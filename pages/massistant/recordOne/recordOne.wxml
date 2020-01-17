@@ -1,0 +1,93 @@
+<!-- 顶部导航栏 -->
+<cu-custom bgColor="bg-gradual-blue" isBack="true">
+  <view slot="content" class='text-lg'>修改记录</view>
+</cu-custom>
+<view class="cu-list menu">
+  <!-- 金额 -->
+  <view class="cu-item" bindtap="showModal" data-target="MoneyDialogModal">
+    <view class="content padding-tb-sm">
+      <view class="text-xxl text-blue">
+        <text>-</text>￥{{money}}
+      </view>
+    </view>
+  </view>
+  <!-- 类型 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">类型</view>
+      <picker bindchange="categoryChange" value="{{categoryIndex}}" range="{{categoryArray}}">
+        <view class="picker">
+          <text class='text-black'>{{category}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">分类</view>
+      <picker bindchange="typenameChange" value="{{typenameIndex}}" range="{{typenameArray}}">
+        <view class="picker">
+          <text class='text-black'>{{typename}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 日期 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">日期</view>
+      <picker mode="date" value="{{date}}" start="2015-01-01" end="{{date}}" bindchange="dateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 时间 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">时间</view>
+      <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="timeChange">
+        <view class="picker">
+          {{time}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 备注 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">备注</view>
+      <view class=''>
+        <input class='text-cut' type='text' placeholder='轻敲添加备注' value="{{remarks}}" bindinput='remarksBindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="flex">
+    <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>修改</button>
+    <button class="flex-sub cu-btn bg-gradual-orange margin-xs shadow lg" bindtap='deleteBindtap'>删除</button>
+  </view>
+</view>
+
+<!-- 金额模态对话框 -->
+<view class="cu-modal {{modalName=='MoneyDialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">请输入支出金额</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-black"></text>
+      </view>
+    </view>
+    <view class="padding-xl text-blue text-xxl">
+      <input type='digit' value='{{money}}' bindinput='moneyBindinput'></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-blue margin-left" bindtap="hideModal">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

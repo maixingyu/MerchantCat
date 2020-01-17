@@ -1,0 +1,38 @@
+<!-- 顶部导航栏 -->
+<cu-custom bgColor="bg-gradual-blue" isBack="true">
+  <view slot="content" class='text-lg'>修改记录</view>
+</cu-custom>
+<view class="cu-list menu">
+  <!-- 姓名 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">姓名</view>
+      <view class=''>
+        <input class='text-cut' type='text' placeholder='轻敲修改姓名' value="{{name}}" bindinput='nameBindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 电话 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">电话</view>
+      <view class=''>
+        <input class='text-cut' type='text' maxlength="11" placeholder='轻敲修改电话' value="{{tel}}" bindinput='telindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">地址</view>
+      <view class=''>
+        <input class='text-cut' type='text' placeholder='轻敲修改地址' value="{{address}}" bindinput='addressBindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="flex">
+    <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>修改</button>
+    <button class="flex-sub cu-btn bg-gradual-orange margin-xs shadow lg" bindtap='deleteBindtap'>删除</button>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="true">
+  <view slot="content" class='text-lg'>一日统计</view>
+</cu-custom>
+<!---------------选项栏---------------->
+<view class="nav bg-white">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub">
+      <picker bindchange="pickerChange" value="{{categoryIndex}}" range="{{categoryArray}}">
+        <view class="picker">
+          <text class='text-black'>	{{categoryArray[categoryIndex]}}</text>
+          <text class='cuIcon-refresharrow'></text>
+        </view>
+      </picker>
+    </view>
+    <view class="cu-item flex-sub">
+      <picker mode="date" value="{{date}}" fields="day" start="2015-01-01" end="{{pickerDate}}" bindchange="dateChange">
+        <view class="picker">
+          <text class='text-black'>{{date}}</text>
+          <text class='cuIcon-refresharrow'></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!----------------总览--------------------->
+<view class='bg-white padding margin-tb-sm'>
+  <view class='flex justify-center'>
+    <view class='text-xxl text-black'>-</view>
+    <view class="text-xxl text-price">{{total}}</view>
+  </view>
+  <view class='flex justify-center'>
+    <view class='text-sm'>{{category}}总金额</view>
+  </view>
+</view>
+<!----------------条形图--------------------->
+<view class="container bg-white margin-tb-sm">
+  <view class='flex justify-center margin'>
+   <view><text class='cuIcon-rankfill text-blue'></text> {{category}}统计条形图</view>
+  </view>
+  <canvas canvas-id="columnCanvas" class="canvas" style="height:200px"></canvas>
+</view>
+<!----------------饼图--------------------->
+<view class="container bg-white margin-tb-sm">
+  <view class='flex justify-center margin'>
+    <view><text class='cuIcon-radioboxfill text-blue'></text> {{category}}统计饼图</view>
+  </view>
+  <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"></canvas>
+</view>

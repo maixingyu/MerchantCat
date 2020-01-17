@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/character/character",
+    "pages/merchant/merchant",
+    "pages/customer/customer",
+    "pages/mshow/home/home",
+    "pages/morder/home/home",
+    "pages/massistant/home/home",
+    "pages/massistant/record/record",
+    "pages/massistant/addRecord/addRecord",
+    "pages/massistant/recordOne/recordOne",
+    "pages/massistant/recordAll/recordAll",
+    "pages/massistant/statistics/statistics",
+    "pages/massistant/oneDay/oneDay",
+    "pages/massistant/oneMonth/oneMonth",
+    "pages/massistant/oneYear/oneYear",
+    "pages/massistant/staff/staff",
+    "pages/massistant/addStaff/addStaff",
+    "pages/massistant/staffInfo/staffInfo",
+    "pages/massistant/supplier/supplier",
+    "pages/massistant/addSupplier/addSupplier",
+    "pages/massistant/SupplierInfo/SupplierInfo",
+    "pages/massistant/goods/goods",
+    "pages/massistant/goodsInfo/goodsInfo",
+    "pages/massistant/addGoods/addGoods",
+    "pages/massistant/goodsReduce/goodsReduce",
+    "pages/massistant/goodsIncrease/goodsIncrease",
+    "pages/massistant/bind/bind",
+    "pages/cshow/home/home",
+    "pages/cme/home/home",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商户猫",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

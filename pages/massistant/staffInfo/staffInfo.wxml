@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-blue" isBack>
+  <view slot="backText">返回</view>
+  <view slot="content">详细信息</view>
+</cu-custom>
+<view class="bg-white" style="height:{{MainHeight}}px;">
+  <view class="flex p-xs mb-sm">
+    <view class="flex-sub padding-sm" bindtap="ChooseImage">
+      <image src="{{avatarChange?avatar:imgHost+avatar}}" style="height:280rpx;width:200rpx"></image>
+    </view>
+    <view class="flex-sub padding-sm">
+      <view class="flex-sub padding-tb-sm margin-xs radius">{{nameValue}}</view>
+      <view class="flex-sub padding-tb-sm margin-xs radius">{{sexValue}}</view>
+      <view class="flex-sub padding-tb-sm margin-xs radius">{{telValue}}</view>
+    </view>
+    <view class="flex-sub padding-sm">
+      <view class="flex-sub padding-tb-sm margin-xs radius" bindtap="showModal" data-target="DialogModal" data-flag="name">{{name}}</view>
+      <view class="flex-sub padding-tb-sm margin-xs radius" bindtap="sexShowModal" data-target="SexRadioModal">{{sex}}</view>
+      <view class="flex-sub padding-tb-sm margin-xs radius" bindtap="showModal" data-target="DialogModal" data-flag="tel">{{tel}}</view>
+    </view>
+  </view>
+  <view class="flex p-xs  mb-sm">
+    <view class="flex-sub padding-sm">{{idCardValue}}</view>
+    <view class="flex-twice padding-sm" bindtap="showModal" data-target="DialogModal" data-flag="idCard">{{idCard}}</view>
+  </view>
+  <view class="flex p-xs  mb-sm">
+    <view class="flex-sub padding-sm">{{addressValue}}</view>
+    <view class="flex-twice padding-sm" bindtap="showModal" data-target="DialogModal" data-flag="address">{{address}}</view>
+  </view>
+  <view class="flex p-xs  mb-sm">
+    <view class="flex-sub padding-sm">{{remarksValue}}</view>
+    <view class="flex-twice padding-sm" bindtap="showModal" data-target="DialogModal" data-flag="remarks">{{remarks.length==0?'暂无':remarks}}</view>
+  </view>
+  <view class="flex p-xs  mb-sm">
+    <view class="flex-sub padding-sm">
+      <button class="cu-btn block bg-gradual-red" bindtap="deleteStaff">删除</button>
+    </view>
+  </view>
+</view>
+<!-- 其他模态框 -->
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">请输入新的{{modalTitle}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl text-xxl">
+      <input wx:if="{{inputType=='name'}}" type='text' maxlength="10" value='{{modalValue}}' bindinput='bindInput'></input>
+      <input wx:elif="{{inputType=='tel'}}" type='number' maxlength="11" value='{{modalValue}}' bindinput='bindInput'></input>
+      <input wx:elif="{{inputType=='idCard'}}" type='number' maxlength="18" value='{{modalValue}}' bindinput='bindInput'></input>
+      <input wx:elif="{{inputType=='address'}}" type='text' maxlength="50" value='{{modalValue}}' bindinput='bindInput'></input>
+      <input wx:else type='text' value='{{modalValue}}' maxlength="50" bindinput='bindInput'></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="hideModal" data-flag="{{inputType}}">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 性别模态框 -->
+<view class="cu-modal {{modalName=='SexRadioModal'?'show':''}}" bindtap="sexHideModal">
+  <view class="cu-dialog">
+    <radio-group class="block" bindchange="sexChange">
+      <view class="cu-list menu text-left">
+        <view class="cu-item">
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub">男</view>
+            <radio class="round blue" value="男" checked="{{sex=='男'?'true':''}}"></radio>
+          </label>
+        </view>
+        <view class="cu-item">
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub">女</view>
+            <radio class="round blue" value="女" checked="{{sex=='女'?'true':''}}"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>

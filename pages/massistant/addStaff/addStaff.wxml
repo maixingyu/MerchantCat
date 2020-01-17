@@ -1,0 +1,63 @@
+<cu-custom bgColor="bg-gradual-blue" isBack>
+  <view slot="backText">返回</view>
+  <view slot="content">添加信息</view>
+</cu-custom>
+<view class="bg-white" style="height:{{MainHeight}}px;">
+  <form>
+    <view class="cu-bar">
+      <view class="action">
+        证件照片<text class="text-red">*</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">姓名<text class="text-red">*</text></view>
+      <input placeholder="请输入姓名" bindinput="infoInput" maxlength="10" data-flag="name"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">性别<text class="text-red">*</text></view>
+      <radio-group class="block" bindchange="sexChange">
+        <view>
+          男
+          <radio class="blue margin-sm" value="男" checked></radio>
+          女
+          <radio class="blue margin-left-sm" value="女"></radio>
+        </view>
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">电话<text class="text-red">*</text></view>
+      <input placeholder="请输入电话" type="number" maxlength="11" bindinput="infoInput" data-flag="tel"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">身份证<text class="text-red">*</text></view>
+      <input placeholder="请输入身份证" type="number" maxlength="18" bindinput="infoInput" data-flag="idCard"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">地址<text class="text-red">*</text></view>
+      <input placeholder="请输入地址" maxlength="50" bindinput="infoInput" data-flag="address"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">备注</view>
+      <input placeholder="请输入备注" maxlength="50" bindinput="infoInput" data-flag="remarks"></input>
+    </view>
+  </form>
+  <view class="flex p-xs mb-sm">
+    <view class="flex-sub padding-sm">
+      <button class="cu-btn block bg-gradual-blue" bindtap="infoSubmit">提交</button>
+    </view>
+  </view>
+</view>

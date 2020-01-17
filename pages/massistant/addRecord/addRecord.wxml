@@ -1,0 +1,229 @@
+<cu-custom bgColor="bg-gradual-blue" isBack>
+  <view slot="content">添加记录</view>
+</cu-custom>
+<!-- 支出收入导航栏 -->
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{tab[index]}}
+    </view>
+  </view>
+</scroll-view>
+<!------------------------------------ 个人支出模块 ------------------------------------>
+<block wx:if="{{TabCur==0}}">
+  <view class="cu-list menu">
+    <!-- 金额 -->
+    <view class="cu-item" bindtap="showModal" data-target="MoneyDialogModal">
+      <view class="content padding-tb-sm">
+        <view class='text-black text-xxl text-price'>
+          {{money}}
+        </view>
+      </view>
+    </view>
+    <!-- 分类 -->
+    <view class="cu-item" bindtap="showModal" data-target="TypenameRadioModal">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">分类</view>
+        <view>{{personalList[typenameIndex]}}</view>
+      </view>
+    </view>
+    <!-- 日期 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">日期</view>
+        <picker mode="date" value="{{date}}" start="2015-01-01" end="{{pickerDate}}" bindchange="DateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 时间 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">时间</view>
+        <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="TimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">备注</view>
+        <view class=''>
+          <input class='text-cut' type='text' placeholder='轻敲添加备注' bindinput='remarksBindinput'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="flex">
+    <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>保存</button>
+  </view>
+</block>
+<!------------------------------------ 日常费用模块 ------------------------------------>
+<block wx:elif="{{TabCur==1}}">
+  <view class="cu-list menu">
+    <!-- 金额 -->
+    <view class="cu-item" bindtap="showModal" data-target="MoneyDialogModal">
+      <view class="content padding-tb-sm">
+        <view class='text-black text-xxl text-price'>
+          {{money}}
+        </view>
+      </view>
+    </view>
+    <!-- 分类 -->
+    <view class="cu-item" bindtap="showModal" data-target="TypenameRadioModal">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">分类</view>
+        <view>{{dailyList[typenameIndex]}}</view>
+      </view>
+    </view>
+    <!-- 日期 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">日期</view>
+        <picker mode="date" value="{{date}}" start="2015-01-01" end="{{pickerDate}}" bindchange="DateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 时间 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">时间</view>
+        <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="TimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">备注</view>
+        <view class=''>
+          <input class='text-cut' type='text' placeholder='轻敲添加备注' bindinput='remarksBindinput'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="flex">
+    <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>保存</button>
+  </view>
+</block>
+<!------------------------------------ 运营成本模块 ------------------------------------>
+<block wx:else>
+  <view class="cu-list menu">
+    <!-- 金额 -->
+    <view class="cu-item" bindtap="showModal" data-target="MoneyDialogModal">
+      <view class="content padding-tb-sm">
+        <view class='text-black text-xxl text-price'>
+          {{money}}
+        </view>
+      </view>
+    </view>
+    <!-- 分类 -->
+    <view class="cu-item" bindtap="showModal" data-target="TypenameRadioModal">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">分类</view>
+        <view>{{operationList[typenameIndex]}}</view>
+      </view>
+    </view>
+    <!-- 日期 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">日期</view>
+        <picker mode="date" value="{{date}}" start="2015-01-01" end="{{pickerDate}}" bindchange="DateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 时间 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">时间</view>
+        <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="TimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view class="text-gray text-sm">备注</view>
+        <view class=''>
+          <input class='text-cut' type='text' placeholder='轻敲添加备注' bindinput='remarksBindinput'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="flex">
+    <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>保存</button>
+  </view>
+</block>
+<!-- 金额模态对话框 -->
+<view class="cu-modal {{modalName=='MoneyDialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">请输入支出金额</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl text-black text-xxl">
+      <input type='digit' value='{{money}}' bindinput='moneyBindinput'></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-blue margin-left" bindtap="hideModal">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分类单选模态框 -->
+<view class="cu-modal {{modalName=='TypenameRadioModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog">
+    <radio-group class="block" bindchange="Bindchange">
+      <view class="cu-list menu text-left">
+        <block wx:if="{{TabCur==0}}">
+          <view class="cu-item" wx:for="{{personalList}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item}}</view>
+              <radio class="round" value="{{item}}" checked="{{index==typenameIndex?'true':''}}"></radio>
+            </label>
+          </view>
+        </block>
+        <block wx:elif="{{TabCur==1}}">
+          <view class="cu-item" wx:for="{{dailyList}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item}}</view>
+              <radio class="round" value="{{item}}" checked="{{index==typenameIndex?'true':''}}"></radio>
+            </label>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="cu-item" wx:for="{{operationList}}" wx:key>
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item}}</view>
+              <radio class="round" value="{{item}}" checked="{{index==typenameIndex?'true':''}}"></radio>
+            </label>
+          </view>
+        </block>
+      </view>
+    </radio-group>
+  </view>
+</view>

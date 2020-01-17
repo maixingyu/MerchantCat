@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">统计</view>
+</cu-custom>
+<view class="cu-card case">
+    <view class="cu-item shadow-lg" wx:for='{{statistics}}' wx:key bindtap='bindtap' data-url='{{item.url}}'>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round md bg-white">
+            <text class="{{item.icon}} text-blue "></text>
+          </view>
+          <view class="content flex-sub">
+            <view class="">{{item.name}}</view>
+            <view class="text-gray text-sm">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

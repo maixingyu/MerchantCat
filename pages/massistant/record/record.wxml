@@ -1,0 +1,65 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">记账</view>
+</cu-custom>
+<!-- 今日交易 -->
+<view class="cu-list menu card-menu margin-top">
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-hotfill text-blue"></text>
+      <text class="text-blue text-lg">今日记录</text>
+    </view>
+  </view>
+  <view wx:if="{{todayList.length==0}}" class="cu-item">
+    <view class="content">
+      <text class="cuIcon-warnfill text-yellow"></text>
+      <text class="text-gray text-sm">今日还未添加记录</text>
+    </view>
+  </view>
+  <view else class="cu-item" wx:for="{{todayList}}" wx:key data-id="{{item.id}}">
+    <navigator class="content" hover-class="none" url="../recordOne/recordOne?id={{item.id}}&category={{item.category}}&typename={{item.typename}}&money={{item.money}}&date={{item.date}}&time={{item.time}}&remarks={{item.remarks}}" open-type="navigateTo">
+      <view class='flex justify-between'>
+        <view>{{item.typename}}</view>
+        <view class="text-sm text-blue">
+          -￥{{item.money}}
+        </view>
+      </view>
+      <view class='flex justify-between'>
+        <view class="text-gray text-sm">{{item.category}}</view>
+        <view class="text-gray text-sm">{{item.time}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="cu-item">
+    <navigator class="content" hover-class="none" url="../recordAll/recordAll" open-type="navigateTo">
+      <text class="cuIcon-all text-blue"></text>
+      <text class="text-blue text-lg">所有记录</text>
+    </navigator>
+  </view>
+</view>
+<!--支出统计-->
+<view class="cu-list menu card-menu margin-top">
+  <view class="cu-item">
+    <view class="content">
+      <text class="cuIcon-moneybagfill text-blue"></text>
+      <text class="text-blue text-lg">支出统计</text>
+    </view>
+  </view>
+  <view class="cu-item" wx:for="{{totalList}}" wx:key>
+    <view class="content">
+      <view class='flex justify-between'>
+        <view>{{item.interval}}</view>
+        <!-- <view class="text-blue text-sm">￥{{item.income}}</view> -->
+      </view>
+      <view class='flex justify-between'>
+        <view class="text-gray text-sm">{{item.time}}</view>
+        <view class="text-black text-sm">-￥{{item.pay}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 悬浮按钮 -->
+<view class='add_icon' bindtap='addRecord' hidden='{{flag}}'>
+  <button class='cu-btn icon bg-gradual-blue lg shadow'>
+    <text class="cuIcon-add text-while"></text>
+  </button>
+</view>

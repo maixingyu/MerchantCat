@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">添加供应商</view>
+</cu-custom>
+
+<view class="bg-white" style="height:{{MainHeight}}px;">
+  <form>
+    <view class="cu-form-group">
+      <view class="title">供应商名称
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入名称" bindinput="infoInput" maxlength="10" data-flag="name"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">供应商电话
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入电话" type="number" maxlength="11" bindinput="infoInput" data-flag="tel"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">供应商地址
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入地址" maxlength="50" bindinput="infoInput" data-flag="address"></input>
+    </view>
+  </form>
+  <view class="flex p-xs mb-sm">
+    <view class="flex-sub padding-sm">
+      <button class="cu-btn block bg-gradual-blue" bindtap="infoSubmit">保存</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">消耗{{name}}</view>
+</cu-custom>
+<view class="cu-list menu">
+  <!-- 备注 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">数量</view>
+      <view class=''>
+        <input class='text-cut' type='number' value="{{quantity}}" placeholder='轻敲消耗数量' bindinput='quantityBindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 日期 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">日期</view>
+      <picker mode="date" value="{{date}}" start="2015-01-01" end="2025-12-31" bindchange="DateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!-- 保存按钮 -->
+<view class="flex">
+  <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>保存</button>
+</view>

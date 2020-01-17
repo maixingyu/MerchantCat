@@ -1,0 +1,25 @@
+<!--pages/bindname/bindname.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack>
+  <view slot="content">商户账户</view>
+</cu-custom>
+<view class="bg-white" style="height:{{MainHeight}}px">
+  <form bindreset="formReset" bindsubmit="formSubmit">
+    <view class="cu-form-group">
+      <view class="title">账号</view>
+      <input name="username" placeholder="请输入您的用户名" bindinput="usernameInput"></input>
+      <text class="{{usernameInputFlag?'cuIcon-roundcheckfill text-blue':'cuIcon-roundclosefill text-gray'}}"></text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">密码</view>
+      <input name="password" password="true" placeholder="请输入您的密码" bindinput="passwordInput"></input>
+      <text class="{{passwordInputFlag?'cuIcon-roundcheckfill text-blue':'cuIcon-roundclosefill text-gray'}}"></text>
+    </view>
+    <view class="bg-gray" style="height:1px"></view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-blue text-blue" form-type="reset">取消</button>
+        <button class="cu-btn bg-blue margin-left" form-type="submit" type="" disabled="{{submitButFlag?true:''}}">确定</button>
+      </view>
+    </view>
+  </form>
+</view>

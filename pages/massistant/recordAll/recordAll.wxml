@@ -1,0 +1,25 @@
+<!-- 顶部导航栏 -->
+<cu-custom bgColor="bg-gradual-blue" isBack="true">
+  <view slot="content" class='text-lg'>全部记录</view>
+</cu-custom>
+<view wx:if="{{recordList.length==0}}" class="text-gray text-center margin-top">你还没有添加过记录哦!</view>
+<view else class="cu-timeline" wx:for="{{recordList}}" wx:key>
+  <view class="cu-item text-blue}}">
+      <navigator class="content" hover-class="none" url="../recordOne/recordOne?id={{item.id}}&category={{item.category}}&typename={{item.typename}}&money={{item.money}}&date={{item.date}}&time={{item.time}}&remarks={{item.remarks}}" open-type="navigateTo">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-blue">{{item.date}}</view>
+        <view class="cu-tag line-blue">{{item.time}}</view>
+      </view>
+      <view class='flex justify-between'>
+        <view>{{item.typename}}</view>
+        <view class="text-blue">
+          <text>-</text>￥{{item.money}}
+        </view>
+      </view>
+      <view class='flex justify-between'>
+        <view class="text-gray text-sm">{{item.category}}</view>
+        <view class="text-gray text-sm">{{item.remarks}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

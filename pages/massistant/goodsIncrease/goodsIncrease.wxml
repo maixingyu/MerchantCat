@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">入库{{name}}</view>
+</cu-custom>
+<view class="cu-list menu">
+  <!-- 备注 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">数量</view>
+      <view class=''>
+        <input class='text-cut' type='number' value="{{quantity}}" placeholder='轻敲消耗数量' bindinput='quantityBindinput'></input>
+      </view>
+    </view>
+  </view>
+  <!-- 日期 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">日期</view>
+      <picker mode="date" value="{{date}}" start="2015-01-01" end="2025-12-31" bindchange="DateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 供应商 -->
+  <view class="cu-item">
+    <view class="content padding-tb-sm">
+      <view class="text-gray text-sm">供应商</view>
+      <picker bindchange="SupplierNameChange" value="{{supplierIndex}}" range="{{supplierNameList}}">
+        <view class="picker">
+          {{supplierNameList[supplierIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!-- 保存按钮 -->
+<view class="flex">
+  <button class="flex-sub cu-btn bg-gradual-blue margin-xs shadow lg" bindtap='saveBindtap'>保存</button>
+</view>
+<!-- 模态框 -->
+<view class="cu-modal {{modalName=='NoSupplierModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">温馨提示</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      您还没有添加供应商，请前往添加
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="toAddSupplier">前往</button>
+
+      </view>
+    </view>
+  </view>
+</view>

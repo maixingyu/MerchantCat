@@ -1,0 +1,33 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">员工</view>
+</cu-custom>
+<block wx:if="{{staffList.length!=0}}">
+  <view class="cu-list menu-avatar sm-border bg-white" style="height:{{MainHeight}}px">
+    <view class="cu-item" wx:for="{{staffList}}" wx:key bindtap="toInfo" data-id="{{item.id}}" data-name="{{item.name}}" data-tel="{{item.tel}}" data-sex="{{item.sex}}" data-idcard="{{item.idCard}}" data-avatar="{{item.avatar}}" data-address="{{item.address}}"
+      data-remarks="{{item.remarks}}">
+      <view class="cu-avatar radius lg" style="background-image:url('{{imgHost}}{{item.avatar}}');"></view>
+      <view class="content">
+        <view class="text-pink">
+          <text class="text-cut">{{item.name}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.tel}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <text class="cuIcon-right text-grey text-lg"></text>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="padding text-center">
+    <view class="padding-xl radius shadow-warp bg-white">您还没有添加员工信息哦！</view>
+  </view>
+</block>
+<!-- 悬浮按钮 -->
+<view class='add_icon' bindtap='toAddStaff'>
+  <button class='cu-btn icon bg-gradual-blue lg shadow'>
+    <text class="cuIcon-add text-while"></text>
+  </button>
+</view>
