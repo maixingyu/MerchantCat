@@ -46,7 +46,7 @@ Page({
   //获得添加记录数据
   addGoodsReduce() {
     wx.pro.request({
-      url: app.globalData.host + '/client/goods/reduce',
+      url: app.globalData.host + '/merchant/goods/reduce',
       data: {
         quantity: this.data.quantity,
         date: this.data.date,

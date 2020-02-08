@@ -3,7 +3,7 @@
 </cu-custom>
 <block wx:if="{{goodsList.length!=0}}">
   <view class="cu-list menu sm-border">
-    <view class="cu-item arrow" wx:for="{{goodsList}}" wx:key bindtap="toGoodsInfo" data-id="{{item.id}}" data-name="{{item.name}}">
+    <view class="cu-item arrow" wx:for="{{goodsList}}" wx:key="index" bindtap="toGoodsInfo" data-id="{{item.id}}" data-name="{{item.name}}">
       <view class="content">
         <text class="cuIcon-tagfill {{item.quantity==0?'text-red':'text-blue'}}"></text>
         <text class="text-grey">{{item.name}}</text>

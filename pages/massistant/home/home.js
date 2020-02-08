@@ -39,41 +39,27 @@ Component({
     }, {
       icon: 'camerafill',
       id: 5,
-      name: '相机',
+      name: '会员',
       color: 'cyan'
     }, {
       icon: 'commentfill',
       id: 6,
-      name: '会话',
+      name: '订单',
       color: 'red'
     }, {
       icon: 'likefill',
       id: 7,
-      name: '爱心',
+      name: '优惠',
       color: 'purple'
     }, {
       icon: 'samefill',
       id: 8,
-      name: '查找',
+      name: '客户端',
       color: 'mauve'
-    }, {
-      icon: 'questionfill',
-      id: 9,
-      name: '问题',
-      color: 'pink'
-    }, {
-      icon: 'cartfill',
-      id: 10,
-      name: '购物',
-      color: 'brown'
-    }, {
-      icon: 'homefill',
-      id: 11,
-      name: '主页',
-      color: 'black'
     }],
     urlArray: [
-      '/pages/massistant/record/record', '/pages/massistant/statistics/statistics', '/pages/massistant/staff/staff', '/pages/massistant/supplier/supplier', '/pages/massistant/goods/goods',
+      '/pages/massistant/record/record', '/pages/massistant/statistics/statistics', '/pages/massistant/staff/staff', '/pages/massistant/supplier/supplier', '/pages/massistant/goods/goods', '/pages/massistant/vip/index/index',
+      '/pages/massistant/order/index/index', '/pages/massistant/order/index/index', '/pages/customer/customer'
     ]
   },
   attached() {
@@ -131,7 +117,7 @@ Component({
         mask: true
       })
       wx.pro.request({
-        url: app.globalData.host + '/client/user/isBind',
+        url: app.globalData.host + '/merchant/user/isBind',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
           'authorization': wx.getStorageSync('authorization')
@@ -139,7 +125,7 @@ Component({
         method: 'POST',
       }).then(res => {
         wx.pro.hideLoading()
-        console.log("是否已经绑定",res)
+        console.log("是否已经绑定", res)
         if (res.data.code == 100) {
           this.setData({
             bindFlag: res.data.data.bindFlag
@@ -169,8 +155,14 @@ Component({
       this.setData({
         indexId: e.currentTarget.dataset.id
       })
-      //调用是否绑定的方法
-      this.isBind()
+      if (this.data.indexId == (this.data.lifeList.length - 1)) {
+        wx.navigateTo({
+          url: this.data.urlArray[this.data.indexId]
+        })
+      } else {
+        //调用是否绑定的方法
+        this.isBind()
+      }
     }
   }
 })

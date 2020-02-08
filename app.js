@@ -7,7 +7,7 @@ App({
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       if (res.code) {
         wx.pro.request({
-          url: this.globalData.host + '/client/user/login',
+          url: this.globalData.host + '/merchant/user/login',
           data: {
             code: res.code
           },
@@ -69,12 +69,12 @@ App({
     // host: 'http://172.16.155.75:8080',
     // imgHost:'http://172.16.155.75:8080/img/',
 
-    // host: 'http://192.168.0.100:8080',
-    // imgHost:'http://192.168.0.100:8080/img/',
+    //host: 'http://192.168.0.104:8080',
+    //imgHost:'http://192.168.0.104:8080/img/',
     // host: 'http://106.14.1.44:8082',
     // imgHost: 'http://106.14.1.44:8082/img/',
-    host: 'https://www.hellome.fun',
-    imgHost: 'https://www.hellome.fun/',
+     host: 'https://www.hellome.fun',
+     imgHost: 'https://www.hellome.fun/',
     personalList: [{
         typename: '交通',
         money: 0.00,

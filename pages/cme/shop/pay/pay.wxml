@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">支付给{{username}}</view>
+</cu-custom>
+<view class="bg-white" style="height:{{MainHeight}}px;">
+  <form>
+    <view class="cu-form-group">
+      <view class="title">金额
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入金额" type="number" maxlength="11" bindinput="infoInput"></input>
+    </view>
+  </form>
+  <view class="flex p-xs mb-sm">
+    <view class="flex-sub padding-sm">
+      <button class="cu-btn block bg-gradual-blue" bindtap="infoSubmit">确认支付</button>
+    </view>
+  </view>
+</view>
+<payjs wx:if="{{ preparePay }}" params="{{ orderParams }}" bindsuccess="bindPaySuccess" bindfail="bindPayFail" bindcomplete="bindPayComplete" bind:dataChange="bindDataChange"/>

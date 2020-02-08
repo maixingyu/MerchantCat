@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">订单</view>
+</cu-custom>
+<view class="cu-list menu sm-border">
+  <view class="cu-item" wx:for="{{merchantOrderList}}" wx:key="index">
+    <view class="content padding-tb-sm ">
+      <view class="text-gray text-sm ">
+        <text class="cuIcon-infofill margin-right-xs text-blue"></text>订单号：{{item.orderNumber}}</view>
+      <view class="text-gray text-sm ">
+        <text class="cuIcon-calendar margin-right-xs text-blue"></text>金额：{{item.money}}元</view>
+      <view class="text-gray text-sm ">
+        <text class="cuIcon-calendar margin-right-xs text-blue"></text>时间：{{item.time}}</view>
+    </view>
+  </view>
+</view>

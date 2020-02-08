@@ -3,7 +3,7 @@
 </cu-custom>
 <block wx:if="{{staffList.length!=0}}">
   <view class="cu-list menu-avatar sm-border bg-white" style="height:{{MainHeight}}px">
-    <view class="cu-item" wx:for="{{staffList}}" wx:key bindtap="toInfo" data-id="{{item.id}}" data-name="{{item.name}}" data-tel="{{item.tel}}" data-sex="{{item.sex}}" data-idcard="{{item.idCard}}" data-avatar="{{item.avatar}}" data-address="{{item.address}}"
+    <view class="cu-item" wx:for="{{staffList}}" wx:key="index" bindtap="toInfo" data-id="{{item.id}}" data-name="{{item.name}}" data-tel="{{item.tel}}" data-sex="{{item.sex}}" data-idcard="{{item.idCard}}" data-avatar="{{item.avatar}}" data-address="{{item.address}}"
       data-remarks="{{item.remarks}}">
       <view class="cu-avatar radius lg" style="background-image:url('{{imgHost}}{{item.avatar}}');"></view>
       <view class="content">

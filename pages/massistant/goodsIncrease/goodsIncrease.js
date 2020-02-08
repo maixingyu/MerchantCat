@@ -63,7 +63,7 @@ Page({
       mask: 'true'
     })
     wx.pro.request({
-      url: app.globalData.host + '/client/supplier/getName',
+      url: app.globalData.host + '/merchant/supplier/getName',
       header: {
         'authorization': wx.getStorageSync("authorization")
       },
@@ -113,7 +113,7 @@ Page({
   //获得添加记录数据
   addGoodsReduce() {
     wx.pro.request({
-      url: app.globalData.host + '/client/goods/increase',
+      url: app.globalData.host + '/merchant/goods/increase',
       data: {
         quantity: this.data.quantity,
         date: this.data.date,

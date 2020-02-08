@@ -25,10 +25,16 @@
     "pages/massistant/addGoods/addGoods",
     "pages/massistant/goodsReduce/goodsReduce",
     "pages/massistant/goodsIncrease/goodsIncrease",
+    "pages/massistant/vip/index/index",
+    "pages/massistant/order/index/index",
     "pages/massistant/bind/bind",
     "pages/cshow/home/home",
     "pages/cme/home/home",
-    "pages/index/index"
+    "pages/cme/order/index/index",
+    "pages/cme/shop/index/index",
+    "pages/cme/shop/shopInfo/shopInfo",
+    "pages/cme/shop/vip/vip",
+    "pages/cme/shop/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,5 +46,8 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx959c8c1fb2d877b5"
+  ],
   "sitemapLocation": "sitemap.json"
 }

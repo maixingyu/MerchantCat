@@ -98,8 +98,6 @@ Page({
   //支出类别单选框改变事件
   Bindchange(e) {
     if (this.data.TabCur == 0) {
-      console.log(e.detail.value)
-      console.log(this.data.personalList.indexOf(e.detail.value))
       this.setData({
         personal: e.detail.value,
         typenameIndex: this.data.personalList.indexOf(e.detail.value)
@@ -177,7 +175,7 @@ Page({
   //获得添加记录数据
   addOneRecord() {
     wx.pro.request({
-      url: app.globalData.host + '/client/record/add',
+      url: app.globalData.host + '/merchant/record/add',
       data: {
         category: this.data.category,
         typename: this.data.typename,

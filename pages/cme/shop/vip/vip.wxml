@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">成为会员</view>
+</cu-custom>
+<view class="bg-white" style="height:{{MainHeight}}px;">
+  <form>
+    <view class="cu-form-group">
+      <view class="title">姓名
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入姓名" bindinput="infoInput" maxlength="10" data-flag="name"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">年龄
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入年龄" type="number" maxlength="3" bindinput="infoInput" data-flag="age"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">性别
+        <text class="text-red">*</text>
+      </view>
+      <input placeholder="请输入性别" maxlength="2" bindinput="infoInput" data-flag="sex"></input>
+    </view>
+  </form>
+  <view class="flex p-xs mb-sm">
+    <view class="flex-sub padding-sm">
+      <button class="cu-btn block bg-gradual-blue" bindtap="infoSubmit">确认</button>
+    </view>
+  </view>
+</view>
+<payjs wx:if="{{ preparePay }}" params="{{ orderParams }}" bindsuccess="bindPaySuccess" bindfail="bindPayFail" bindcomplete="bindPayComplete" bind:dataChange="bindDataChange"/>

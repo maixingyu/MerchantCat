@@ -43,7 +43,7 @@ Page({
   onShow: function () {
     //获得所有交易数据
     wx.pro.request({
-      url: app.globalData.host + '/client/record/all',
+      url: app.globalData.host + '/merchant/record/all',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'authorization': wx.getStorageSync("authorization")

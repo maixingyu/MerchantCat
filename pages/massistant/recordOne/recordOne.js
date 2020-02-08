@@ -146,7 +146,7 @@ Page({
     } else {
       //提交修改数据
       wx.pro.request({
-        url: app.globalData.host + '/client/record/alter',
+        url: app.globalData.host + '/merchant/record/alter',
         data: {
           id: this.data.id,
           category: this.data.category,
@@ -183,7 +183,7 @@ Page({
   deleteBindtap() {
     //提交删除记录id
     wx.pro.request({
-      url: app.globalData.host + '/client/record/delete/' + this.data.id,
+      url: app.globalData.host + '/merchant/record/delete/' + this.data.id,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'authorization': wx.getStorageSync("authorization")

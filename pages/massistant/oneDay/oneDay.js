@@ -133,7 +133,7 @@ Page({
   requestGetData(e) {
     //向服务器请求数据
     wx.pro.request({
-      url: app.globalData.host + '/client/record/statistics/' + this.data.category + "/" + this.data.date + "/" + this.data.date,
+      url: app.globalData.host + '/merchant/record/statistics/' + this.data.category + "/" + this.data.date + "/" + this.data.date,
       header: {
         'authorization': wx.getStorageSync("authorization")
       },

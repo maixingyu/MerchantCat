@@ -12,8 +12,8 @@
     <image src="/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
   </view>
   <view class="bg-white">
-    <view class="cu-list grid col-4 no-border">
-      <view class="cu-item" wx:for="{{lifeList}}" wx:key data-id="{{item.id}}" bindtap="toUrl">
+    <view class="cu-list grid col-3 no-border">
+      <view class="cu-item" wx:for="{{lifeList}}" wx:key="index" data-id="{{item.id}}" bindtap="toUrl">
         <view class="cuIcon-{{item.icon}} text-{{item.color}} text-shadow"></view>
         <text class="text-shadow">{{item.name}}</text>
       </view>

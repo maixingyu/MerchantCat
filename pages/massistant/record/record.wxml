@@ -15,7 +15,7 @@
       <text class="text-gray text-sm">今日还未添加记录</text>
     </view>
   </view>
-  <view else class="cu-item" wx:for="{{todayList}}" wx:key data-id="{{item.id}}">
+  <view else class="cu-item" wx:for="{{todayList}}" wx:key="index" data-id="{{item.id}}">
     <navigator class="content" hover-class="none" url="../recordOne/recordOne?id={{item.id}}&category={{item.category}}&typename={{item.typename}}&money={{item.money}}&date={{item.date}}&time={{item.time}}&remarks={{item.remarks}}" open-type="navigateTo">
       <view class='flex justify-between'>
         <view>{{item.typename}}</view>
@@ -44,7 +44,7 @@
       <text class="text-blue text-lg">支出统计</text>
     </view>
   </view>
-  <view class="cu-item" wx:for="{{totalList}}" wx:key>
+  <view class="cu-item" wx:for="{{totalList}}" wx:key="index">
     <view class="content">
       <view class='flex justify-between'>
         <view>{{item.interval}}</view>

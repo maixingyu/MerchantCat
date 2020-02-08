@@ -81,7 +81,7 @@ Page({
       mask:true
     })
     wx.pro.request({
-      url: app.globalData.host + "/client/user/bind",
+      url: app.globalData.host + "/merchant/user/bind",
       data: {
         username: e.detail.value.username,
         password: e.detail.value.password

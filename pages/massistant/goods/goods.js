@@ -41,7 +41,7 @@ Page({
       mask: 'true'
     })
     wx.pro.request({
-      url: app.globalData.host + '/client/goods/index',
+      url: app.globalData.host + '/merchant/goods/index',
       header: {
         'authorization': wx.getStorageSync("authorization")
       },

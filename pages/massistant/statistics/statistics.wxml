@@ -2,7 +2,7 @@
   <view slot="backText">统计</view>
 </cu-custom>
 <view class="cu-card case">
-    <view class="cu-item shadow-lg" wx:for='{{statistics}}' wx:key bindtap='bindtap' data-url='{{item.url}}'>
+    <view class="cu-item shadow-lg" wx:for='{{statistics}}' wx:key="index" bindtap='bindtap' data-url='{{item.url}}'>
       <view class="cu-list menu-avatar">
         <view class="cu-item">
           <view class="cu-avatar round md bg-white">

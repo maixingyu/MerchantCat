@@ -114,7 +114,7 @@ Page({
       mask: 'true'
     })
     wx.pro.uploadFile({
-      url: app.globalData.host + "/client/staff/add",
+      url: app.globalData.host + "/merchant/staff/add",
       header: {
         'content-type': 'multipart/form-data',
         'authorization': wx.getStorageSync("authorization")

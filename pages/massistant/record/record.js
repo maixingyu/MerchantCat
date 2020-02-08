@@ -92,7 +92,7 @@ Page({
   getRecord() {
     //获得收入支出数据
     wx.pro.request({
-      url: app.globalData.host + '/client/record/index',
+      url: app.globalData.host + '/merchant/record/index',
       header: {
         'authorization': wx.getStorageSync("authorization")
       },

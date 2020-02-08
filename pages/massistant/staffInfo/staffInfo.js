@@ -54,7 +54,7 @@ Page({
       mask: 'true'
     })
     wx.pro.uploadFile({
-      url: app.globalData.host + "/client/staff/alterAvatar",
+      url: app.globalData.host + "/merchant/staff/alterAvatar",
       header: {
         'content-type': 'multipart/form-data',
         'authorization': wx.getStorageSync("authorization")
@@ -171,7 +171,7 @@ Page({
     console.log("key:", flag)
     console.log("fasong:", paramValue)
     wx.pro.request({
-      url: app.globalData.host + '/client/staff/alterOther/' + this.data.id + "/" + flag + "/" + paramValue,
+      url: app.globalData.host + '/merchant/staff/alterOther/' + this.data.id + "/" + flag + "/" + paramValue,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'authorization': wx.getStorageSync("authorization")
@@ -214,7 +214,7 @@ Page({
   },
   alterSex: function() {
     wx.pro.request({
-      url: app.globalData.host + '/client/staff/alterOther/' + this.data.id + "/sex/" + this.data.sex,
+      url: app.globalData.host + '/merchant/staff/alterOther/' + this.data.id + "/sex/" + this.data.sex,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'authorization': wx.getStorageSync("authorization")
@@ -241,7 +241,7 @@ Page({
   },
   deleteStaff: function() {
     wx.pro.request({
-      url: app.globalData.host + '/client/staff/delete/' + this.data.id,
+      url: app.globalData.host + '/merchant/staff/delete/' + this.data.id,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'authorization': wx.getStorageSync("authorization")

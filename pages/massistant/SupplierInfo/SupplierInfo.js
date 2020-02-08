@@ -38,7 +38,7 @@ Page({
     } else {
       //提交修改数据
       wx.pro.request({
-        url: app.globalData.host + '/client/supplier/alter',
+        url: app.globalData.host + '/merchant/supplier/alter',
         data: {
           id: this.data.id,
           name: this.data.name,

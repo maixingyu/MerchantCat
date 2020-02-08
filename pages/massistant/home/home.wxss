@@ -1,4 +1,4 @@
-/* pages/massistant/home/home.wxss */.UCenter-bg {
+.UCenter-bg {
   background-size: cover;
   height: 550rpx;
   display: flex;
