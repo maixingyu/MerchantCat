@@ -73,8 +73,8 @@ App({
     //imgHost:'http://192.168.0.104:8080/img/',
     // host: 'http://106.14.1.44:8082',
     // imgHost: 'http://106.14.1.44:8082/img/',
-     host: 'https://www.hellome.fun',
-     imgHost: 'https://www.hellome.fun/',
+     host: 'https://merchant.hellome.fun',
+     imgHost: 'https://merchant.hellome.fun/',
     personalList: [{
         typename: '交通',
         money: 0.00,
