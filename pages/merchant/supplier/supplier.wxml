@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">供应商</view>
+</cu-custom>
+<block wx:if="{{supplierList.length!=0}}">
+  <view class="cu-list menu sm-border bg-white" style="height:{{MainHeight}}px">
+    <view class="cu-item arrow" wx:for="{{supplierList}}" wx:key="index" bindtap="toInfo" data-id="{{item.id}}" data-name="{{item.name}}" data-tel="{{item.tel}}" data-address="{{item.address}}">
+      <view class="content padding-tb-sm">
+        <view class="text-black">
+          <text class="cuIcon-myfill text-blue margin-right-xs"></text>{{item.name}}</view>
+        <view class="text-black text-sm">
+          <text class="cuIcon-dianhua text-blue margin-right-xs"></text>{{item.tel}}</view>
+        <view class="text-black text-sm">
+          <text class="cuIcon-locationfill text-blue margin-right-xs"></text>{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="padding text-center">
+    <view class="padding-xl radius shadow-warp bg-white">您还没有添加供应商信息哦！</view>
+  </view>
+</block>
+<!-- 悬浮按钮 -->
+<view class='add_icon' bindtap='toAddSupplier'>
+  <button class='cu-btn icon bg-gradual-blue lg shadow'>
+    <text class="cuIcon-add text-while"></text>
+  </button>
+</view>

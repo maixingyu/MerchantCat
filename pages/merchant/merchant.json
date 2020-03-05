@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "assistant": "/pages/massistant/home/home",
-    "show": "/pages/mshow/home/home",
-    "order": "/pages/morder/home/home"
-  }
-}

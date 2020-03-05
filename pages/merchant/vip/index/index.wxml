@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">会员</view>
+</cu-custom>
+<view class="cu-list menu sm-border">
+  <view class="cu-item" wx:for="{{merchantVipList}}" wx:key="index">
+    <view class="content padding-tb-sm ">
+      <view class="text-gray text-sm text-black">
+        <text class="cuIcon-myfill margin-right-xs text-blue"></text>姓名：{{item.name}}</view>
+      <view class="text-gray text-sm text-black">
+        <text class="cuIcon-card margin-right-xs text-blue"></text>年龄：{{item.age}}</view>
+      <view class="text-gray text-sm text-black">
+        <text class="cuIcon-card margin-right-xs text-blue"></text>性别：{{item.sex}}</view>
+    </view>
+  </view>
+</view>

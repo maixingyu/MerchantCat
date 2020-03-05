@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">货物</view>
+</cu-custom>
+<block wx:if="{{goodsList.length!=0}}">
+  <view class="cu-list menu sm-border">
+    <view class="cu-item arrow" wx:for="{{goodsList}}" wx:key="index" bindtap="toGoodsInfo" data-id="{{item.id}}" data-name="{{item.name}}">
+      <view class="content">
+        <text class="cuIcon-tagfill {{item.quantity==0?'text-red':'text-blue'}}"></text>
+        <text class="text-black">{{item.name}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round {{item.quantity==0?'bg-red':'bg-blue'}} light">{{item.quantity}}{{item.unit}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="padding text-center">
+    <view class="padding-xl radius shadow-warp bg-white">您还没有添加货物信息哦！</view>
+  </view>
+</block>
+<!-- 悬浮按钮 -->
+<view class='add_icon' bindtap='toAddGoods'>
+  <button class='cu-btn icon bg-gradual-blue lg shadow'>
+    <text class="cuIcon-add text-while"></text>
+  </button>
+</view>

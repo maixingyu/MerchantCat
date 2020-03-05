@@ -1,4 +1,3 @@
-// pages/character/character.js
 Page({
 
   /**
@@ -9,7 +8,6 @@ Page({
   },
   //点击切换用户
   chooseCharacter:function(e){
-    console.log(e.currentTarget.dataset.flag)
     if (e.currentTarget.dataset.flag=="true"){
       this.setData({
         characteFlag:true
@@ -26,17 +24,11 @@ Page({
   initCharacter:function(){
     if(this.data.characteFlag==true){
       wx.redirectTo({
-        url: '/pages/merchant/merchant',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
+        url: '/pages/merchant/home/home'
       })
     }else{
       wx.redirectTo({
-        url: '/pages/customer/customer',
-        success: function (res) { },
-        fail: function (res) { },
-        complete: function (res) { },
+        url: '/pages/customer/home/home'
       })
     }
   },
@@ -44,17 +36,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (wx.getStorageSync("character") == "merchant") {
-    //   console.log(wx.getStorageSync("character"))
-    //   wx.redirectTo({
-    //     url: '/pages/merchant/merchant',
-    //   })
-    // } else if (wx.getStorageSync("character") == "customer") {
-    //   console.log(wx.getStorageSync("character"))
-    //   wx.redirectTo({
-    //     url: '/pages/customer/customer',
-    //   })
-    // }
   },
 
   /**

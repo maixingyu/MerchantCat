@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "me": "/pages/cme/home/home",
-    "show": "/pages/cshow/home/home"
-  }
-}

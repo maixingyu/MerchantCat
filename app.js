@@ -16,7 +16,7 @@ App({
           },
           method: 'POST',
         }).then(res => {
-          console.log("登录",res)
+          console.log("登录", res)
           wx.setStorageSync("authorization", res.data.data.authorization)
           this.globalData.statusCode = res.statusCode;
           //由于这里是网络请求，可能会在 Page.onLoad 之后才返回
@@ -70,11 +70,9 @@ App({
     // imgHost:'http://172.16.155.75:8080/img/',
 
     //host: 'http://192.168.0.104:8080',
-    //imgHost:'http://192.168.0.104:8080/img/',
-    // host: 'http://106.14.1.44:8082',
-    // imgHost: 'http://106.14.1.44:8082/img/',
-     host: 'https://merchant.hellome.fun',
-     imgHost: 'https://merchant.hellome.fun/',
+    //imgHost: 'http://192.168.0.104:8080/img/',
+    host: 'https://merchant.hellome.fun',
+    imgHost: 'https://merchant.hellome.fun/',
     personalList: [{
         typename: '交通',
         money: 0.00,
@@ -122,7 +120,7 @@ App({
       typename: '其他',
       money: 0.00,
     }],
-    
+
     operationList: [{
       typename: '员工工资',
       money: 0.00,

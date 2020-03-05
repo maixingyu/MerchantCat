@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="{{characteFlag==true?'bg-gradual-blue':'bg-gradual-orange'}}">
   <view slot="content">商户猫</view>
 </cu-custom>
 <view class="" style="margin-top:100px;">
@@ -7,16 +7,16 @@
     <text class="text-orange"> 客户 </text>呢？
   </view>
   <view class="flex justify-center" style="margin-top:30px;">
-    <view class="shadow-blur {{characteFlag==true?'bg-blue':'bg-white'}} radius margin-lr-sm text-center" bindtap="chooseCharacter" data-flag="true" style="width:150px;height:150px;">
-      <view class="cu-avatar xl round margin-top-xl" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
+    <view class="shadow-blur {{characteFlag==true?'bg-gradual-blue':'bg-white'}} radius margin-lr-sm text-center" bindtap="chooseCharacter" data-flag="true" style="width:150px;height:150px;">
+      <view class="cu-avatar xl round margin-top-xl" style="background-image:url(https://merchant.hellome.fun/merchant.png);"></view>
       <view class="margin-top-lg text-bold {{characteFlag==true?'':'text-gray'}}">商户</view>
     </view>
-    <view class="shadow-blur {{characteFlag!=true?'bg-orange':'bg-white'}} radius margin-lr-sm text-center" bindtap="chooseCharacter" data-flag="false" style="width:150px;height:150px;">
-      <view class="cu-avatar xl round margin-top-xl" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
+    <view class="shadow-blur {{characteFlag!=true?'bg-gradual-orange':'bg-white'}} radius margin-lr-sm text-center" bindtap="chooseCharacter" data-flag="false" style="width:150px;height:150px;">
+      <view class="cu-avatar xl round margin-top-xl" style="background-image:url(https://merchant.hellome.fun/customer.png);"></view>
       <view class="margin-top-lg text-bold {{characteFlag!=true?'':'text-gray'}}">客户</view>
     </view>
   </view>
   <view class=" flex justify-center margin-top-xl">
-    <button class="cu-btn round {{characteFlag==true?'bg-blue':'bg-orange'}} shadow padding-lr-xl text-bold" bindtap="initCharacter">确 定</button>
+    <button class="cu-btn round {{characteFlag==true?'bg-gradual-blue':'bg-gradual-orange'}} shadow padding-lr-xl text-bold" bindtap="initCharacter">确 定</button>
   </view>
 </view>
